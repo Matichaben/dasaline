@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Gambling Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 60px;
+        }
+        .number:hover {
+            background-color: #ccc;
+        }
+        .selected {
+            background-color: #ff0;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Gambling Game</h1>
+        <p>Choose a number:</p>
+        <?php
+        $luckyNumber = mt_rand(1, 6); // Generate a random lucky number (1-6)
+        for ($i = 1; $i <= 6; $i++) {
+            echo '<div class="number" onclick="selectNumber(' . $i . ')">' . $i . '</div>';
+        }
+        ?>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function selectNumber(number) {
+            var numbers = document.getElementsByClassName('number');
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i].classList.remove('selected');
+            }
+            document.getElementById('result').innerHTML = '';
+            var selectedNumber = document.getElementsByClassName('number')[number - 1];
+            selectedNumber.classList.add('selected');
+            checkLuckyNumber(number);
+        }
+
+        function checkLuckyNumber(number) {
+            var luckyNumber = <?php echo $luckyNumber; ?>;
+            if (number == luckyNumber) {
+                document.getElementById('result').innerHTML = 'Congratulations! You won!';
+            } else {
+                document.getElementById('result').innerHTML = 'Better luck next time!';
+            }
+        }
+    </script>
+</body>
+</html>

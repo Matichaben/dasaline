@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+  /* Add your custom styles here */
+  /* Example styles for the navigation bar */
+  .navbar {
+    background-color: teal;
+    overflow: hidden;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #009933; /* Darker shade of green for hover */
+    color: black;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .search-container {
+    float: right;
+  }
+
+  .search-container input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+
+  .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar a, .dropdown .dropbtn {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content {
+      position: relative;
+    }
+
+    .search-container {
+      float: right;
+    }
+
+    .search-container input[type="text"] {
+      padding: 10px;
+      width: 20vw;
+    }
+
+    .search-container button {
+      padding: 10px;
+      width: 20vw;
+      
+      text-align: center;
+    }
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 5;
+            padding: 5;
+        }
+
+        .teal-section {
+            background-color: teal;
+            color: white;
+            padding: 50px;
+            margin-top: 3px;
+
+        }
+
+        .teal-section h1 {
+            font-size: 24px;
+        }
+
+        .teal-section p {
+            font-size: 18px;
+        }
+
+        .teal-section .rectangle-link {
+            display: inline-block;
+            background-color: teal;
+            border: 1px solid white;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .teal-section .rectangle-link:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .teal-section {
+                padding: 10px;
+            }
+        }
+    </style>
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .teal-paragraph {
+      color: teal;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .link {
+      display: block;
+      width: 300px;
+      height: 50px;
+      background-color: white;
+      border: 1px solid teal;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      text-align: center;
+      line-height: 40px;
+      color: teal;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+      border-radius: 5px;
+    }
+    
+    .link:hover {
+      background-color: teal;
+      color: white;
+    }
+  </style>
+    <style>
+    /* Footer styles */
+    .footer {
+      background-color: teal;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .footer ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer ul li {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+  <!-- Add Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: #000;
+      border: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #000;
+      color: white;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .button {
+        display: block;
+        width: vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#"><i class="fa fa-home"></i> Home</a>
+    <a href="#"><i class="fa fa-info-circle"></i> About</a>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fa fa-caret-down"></i> Services</button>
+      <div class="dropdown-content">
+        <a href="#">Company Registration in Kenya</a>
+        <a href="#">Company Secretarial services in Kenya</a>
+        <a href="#">Corporate Services in Kenya</a>
+        <a href="#">Routine Compliance Services in Kenya</a>
+        <a href="#">Legalization of document services in kenya</a>
+        <a href="#">corporate Governance Services in Kenya</a>
+        <a href="#">Due Diligence Services in Kenya</a>
+        <a href="#">Resources</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQs</a>
+      </div>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  <div class="teal-section">
+        <h1>MENGE MENGE & ASSOCIATES</h1>
+        <p>we offer services at our customers' content and quality services is our priority.</p>
+        <a href="#" class="rectangle-link">About Us</a>
+    </div>
+    <body>
+  <div class="container">
+    <p class="teal-paragraph">Click on a service below to  proceed:</p>
+    <div class="link-container">
+      <a href="#" class="link">Company Registration</a>
+      <a href="#" class="link">Company Secretarial</a>
+      <a href="#" class="link">Corporate Services</a>
+      <a href="#" class="link">Routine Compliance</a>
+      <a href="#" class="link">Legalization of Documents</a>
+      <a href="#" class="link">Corporate Governance</a>
+      <a href="#" class="link">Due Diligence Services</a>
+    </div>
+  </div>
+   <footer class="footer">
+    <ul>
+      <li><a href="https://ecitizen.go.ke/">Ecitizen</a></li>
+      <li><a href="#">Immigration</a></li>
+      <li><a href="https://www.hudumakenya.go.ke/">Huduma Kenya</a></li>
+      <li><a href="#">BRS</a></li>
+    </ul>
+      <a href="#" class="button">Downloads</a>
+
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="copyright">
+      &copy; 2023 BENTECH Solutions. All rights reserved. <!-- Added Copyright -->
+    </div>
+  </footer>
+
+  <!-- Add Font Awesome script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
